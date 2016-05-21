@@ -3,14 +3,15 @@ const path = require('path');
 const app = express();
 
 const routes = require('./server/router/index');
+const filePath = require('./path');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use('/server',express.static(path.join(__dirname, 'server')));
-app.use('/views',express.static(path.join(__dirname, 'views')));
-app.use('/node_modules',express.static(path.join(__dirname, 'node_modules')));
-app.use('/script', express.static(path.join(__dirname, 'views')));
+filePath().forEach((item) => {
+  app.use(`${item.path}`,express.static(path.join(__dirname, `${item.name}`)));
+});
+
 app.use('/', routes);
 
 app.listen(3000, () => {

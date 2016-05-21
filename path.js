@@ -13,8 +13,12 @@ module.exports = () => {
       name: 'node_modules'
     },
     {
-      path: '/menu',
+      path: '/script',
       name: 'views/menu'
+    },
+    {
+      path: '/script',
+      name: 'views/home'
     }
   ]
 };

@@ -9,7 +9,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 filePath().forEach((item) => {
-  app.use(`${item.path}`,express.static(path.join(__dirname, `${item.name}`)));
+  app.use(`${item.path}`, express.static(path.join(__dirname, `${item.name}`)));
 });
 
 app.use('/', routes);

@@ -1,5 +1,5 @@
 doctype html
-html 
+html(ng-app='app')
   head
     link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap.css")
     title Home
@@ -7,4 +7,5 @@ html
     block content
       include ../menu/menu.jade
   script(src='node_modules/angular/angular.js')
+  
   

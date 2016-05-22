@@ -2,11 +2,15 @@
   angular.module('myapp', ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider){
 
-      $stateProvider.state('signUp', {
+      $stateProvider.state('index', {
         url: '/',
         templateUrl: 'views/menu/menu',
         controller: 'MenuController'
-      })
+      }).state('category', {
+        url: 'category',
+        templateUrl: 'views/category/category.jade',
+        controller: 'CategoryController'
+      });
 
               //
               // $urlRouterProvider.otherwise('/home');

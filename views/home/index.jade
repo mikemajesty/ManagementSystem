@@ -11,11 +11,13 @@ html
   block js
     script(src='views/app.js')
     script(src='script/index-controller.js')
+    script(src='script/category-controller.js')
+    
   body(ng-app='myapp')
     block content
       div(ng-controller='MenuController')
         include ../menu/menu.jade
-      
+      div(ui-view='')
       
       
   

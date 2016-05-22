@@ -2,11 +2,7 @@
   angular.module('myapp', ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider){
 
-      $stateProvider.state('index', {
-        url: '/',
-        templateUrl: 'views/menu/menu',
-        controller: 'MenuController'
-      }).state('category', {
+      $stateProvider.state('category', {
         url: 'category',
         templateUrl: 'views/category/category.jade',
         controller: 'CategoryController'

@@ -18,6 +18,10 @@ module.exports = () => {
     },
     {
       path: '/script',
+      name: 'views/category'
+    },
+    {
+      path: '/script',
       name: 'views/home'
     },
     {

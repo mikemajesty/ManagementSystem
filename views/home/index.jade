@@ -1,15 +1,19 @@
 doctype html
 html
   head
-    link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap.css")
+    block css
+      link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap.css")
     title Home
-  script(src='node_modules/angular/angular.js')
-  script(src='node_modules/angular-ui-router/release/angular-ui-router.min.js')  
-  script(src='views/app.js')
-  script(src='script/index-controller.js')
+  block libs
+    script(src='node_modules/angular/angular.js')
+    script(src='node_modules/angular-ui-router/release/angular-ui-router.min.js')  
+    
+  block js
+    script(src='views/app.js')
+    script(src='script/index-controller.js')
   body(ng-app='myapp')
     block content
-      div(ng-controller='IndexController')
-        {{mike}}
+      div(ng-controller='MenuController')
+        include ../menu/menu.jade
   
   

@@ -4,8 +4,8 @@
 
       $stateProvider.state('signUp', {
         url: '/',
-        templateUrl: 'views/home/index',
-        controller: 'IndexController'
+        templateUrl: 'views/menu/menu',
+        controller: 'MenuController'
       })
 
               //

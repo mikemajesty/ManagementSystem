@@ -19,6 +19,14 @@ module.exports = () => {
     {
       path: '/script',
       name: 'views/home'
+    },
+    {
+      path: '/css',
+      name: 'www/css'
+    },
+    {
+      path: '/www',
+      name: 'www'
     }
   ]
 };

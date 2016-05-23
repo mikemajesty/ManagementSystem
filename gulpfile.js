@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const jade = require('gulp-jade');
 
 gulp.task('sass', () => {
   return gulp.src('views/**/*.scss').
@@ -8,8 +9,15 @@ gulp.task('sass', () => {
 
 });
 
-gulp.task('watch', () => {
-   gulp.watch('views/**/*.scss',['sass']);
+gulp.task('jade', () => {
+  return gulp.src('views/**/*.jade')
+    .pipe(jade())
+      .pipe(gulp.dest('www/html'));
 });
 
-gulp.task('default', ['sass','watch']);
+gulp.task('watch', () => {
+   gulp.watch('views/**/*.scss',['sass']);
+   gulp.watch('views/**/*.jade',['jade']);
+});
+
+gulp.task('default', ['sass','watch', 'jade']);

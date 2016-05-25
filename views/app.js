@@ -4,7 +4,7 @@
 
       $stateProvider.state('category', {
         url: 'category',
-        templateUrl: 'views/category/category.jade',
+        templateUrl: '/public/html/home/index.html',
         controller: 'CategoryController'
       });
 

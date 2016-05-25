@@ -1,1 +1,0 @@
-!function(){angular.module("myapp").controller("CategoryController",["$scope",function(o){console.log("hurray")}])}();

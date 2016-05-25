@@ -2,22 +2,18 @@ doctype html
 html
   head
     block css
-      link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap.css")
+      link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css")
     title Home
-  block libs
-    script(src='node_modules/angular/angular.js')
-    script(src='node_modules/angular-ui-router/release/angular-ui-router.min.js')  
-    
-  block js
-    script(src='views/app.js')
-    script(src='script/index-controller.js')
-    script(src='script/category-controller.js')
     
   body(ng-app='myapp')
     block content
       div(ng-controller='MenuController')
         include ../menu/menu.jade
       div(ui-view='')
+      
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.min.js')  
+    script(src='/public/js/all.js')
       
       
   

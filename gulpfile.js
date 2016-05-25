@@ -2,10 +2,12 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const jade = require('gulp-jade');
 const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 
 gulp.task('sass', () => {
   return gulp.src('views/**/*.scss').
     pipe(sass({sourceComments: 'map'})).
+    pipe(concat('all.css')).
     pipe(gulp.dest('www/css'));
 
 });
@@ -19,7 +21,8 @@ gulp.task('jade', () => {
 gulp.task('js', () => {
   return gulp.src('views/**/*.js')
     .pipe(uglify())
-      .pipe(gulp.dest('www/js'))
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('www/js/'))
 });
 
 gulp.task('watch', () => {

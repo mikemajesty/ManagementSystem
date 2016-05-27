@@ -3,6 +3,8 @@ const sass = require('gulp-sass');
 const jade = require('gulp-jade');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const browserSync = require('browser-sync');
+const nodemon = require('gulp-nodemon');
 
 gulp.task('sass', () => {
   return gulp.src('views/**/*.scss').
@@ -25,10 +27,25 @@ gulp.task('js', () => {
     .pipe(gulp.dest('www/js/'))
 });
 
+gulp.task('browser-sync', ['nodemon'], function() {
+	browserSync.init(null, {
+		proxy: "http://localhost:3000",
+        files: ["views/**/*.*"],
+        browser: 'google-chrome',
+        port: 7000,
+	});
+});
+
+gulp.task('nodemon', (cb) =>{
+    return nodemon({
+      script: 'server.js'
+    }).once('start', cb);
+});
+
 gulp.task('watch', () => {
    gulp.watch('views/**/*.scss',['sass']);
    gulp.watch('views/**/*.jade',['jade']);
    gulp.watch('views/**/*.js',['js']);
 });
 
-gulp.task('default', ['sass','watch', 'jade' , 'js']);
+gulp.task('default', ['sass','watch', 'jade' , 'js', 'browser-sync']);

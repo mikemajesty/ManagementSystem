@@ -1,3 +1,3 @@
-!function(){angular.module("myapp",["ui.router"]).config(function($stateProvider,$urlRouterProvider){$urlRouterProvider.otherwise("/"),$stateProvider.state("category",{url:"/category",templateUrl:"/public/html/category/category.html",controller:"HomeController"})})}();
-!function(){angular.module("myapp").controller("CategoryController",["$scope",function($scope){console.log("hurray")}])}();
-!function(){angular.module("myapp").controller("HomeController",["$scope","$q",function($scope,$q){console.log("hurray")}])}();
+!function(){angular.module("myapp",["ui.router"]).config(function($stateProvider,$urlRouterProvider){$urlRouterProvider.otherwise("home"),$stateProvider.state("category",{url:"/category",templateUrl:"/public/html/category/category.html",controller:"CategoryController"})})}();
+!function(){angular.module("myapp").controller("CategoryController",["$scope",function($scope){console.log("hurray category")}])}();
+!function(){angular.module("myapp").controller("HomeController",["$scope","$q",function($scope,$q){console.log("hurray home")}])}();

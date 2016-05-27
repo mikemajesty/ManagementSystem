@@ -5,6 +5,7 @@ const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync');
 const nodemon = require('gulp-nodemon');
+const babel = require('gulp-babel');
 
 gulp.task('sass', () => {
   return gulp.src('views/**/*.scss').
@@ -22,6 +23,9 @@ gulp.task('jade', () => {
 
 gulp.task('js', () => {
   return gulp.src('views/**/*.js')
+    .pipe(babel({
+        presets: ['es2015']
+      }))
     .pipe(uglify({mangle: false}))
     .pipe(concat('all.js'))
     .pipe(gulp.dest('www/js/'))
@@ -32,7 +36,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
 		proxy: "http://localhost:3000",
         files: ["views/**/*.*"],
         browser: 'google-chrome',
-        port: 8000,
+        port: 3000,
 	});
 });
 
@@ -48,4 +52,4 @@ gulp.task('watch', () => {
    gulp.watch('views/**/*.js',['js']);
 });
 
-gulp.task('default', ['sass','watch', 'jade' , 'js', 'browser-sync']);
+gulp.task('default', ['sass', 'watch', 'jade', 'js']); // add in array 'browser-sync'

@@ -1,20 +1,28 @@
 doctype html
-html
+html(ng-app='myapp')
   head
     block css
       link(rel="stylesheet", href="libs/bootstrap/dist/css/bootstrap.min.css")
       link(rel="stylesheet", href="public/css/all.css")
     title Home
     
-  body(ng-app='myapp')
+  body
     block content
-      div(ng-controller='MenuController')
-        include ../menu/menu.jade
-      div(ui-view='')
+      div.menu(ng-controller='MenuController')
+        div.row
+          div.col-lg-10.col-lg-offset-3
+            ul.nav.nav-pills
+              li.active(role='presentation')
+                a(ui-sref='category') Home
+              li(role='presentation')
+                a(href='#') Profile
+              li(role='presentation')
+                a(href='#') Messages
+        div(ui-view='')
       
-    script(src='libs/angular/angular.min.js')
-    script(src='libs/angular-ui-router/release/angular-ui-router.min.js')  
-    script(src='/public/js/all.js')
+  script(src='libs/angular/angular.min.js')
+  script(src='libs/angular-ui-router/release/angular-ui-router.min.js')  
+  script(src='/public/js/all.js')
       
       
   

@@ -1,28 +1,27 @@
 doctype html
 html(ng-app='myapp')
-  head
-    block css
-      link(rel="stylesheet", href="libs/bootstrap/dist/css/bootstrap.min.css")
-      link(rel="stylesheet", href="public/css/all.css")
-    title Home
-    
-  body
-    block content
-      div.menu(ng-controller='MenuController')
-        div.row
-          div.col-lg-10.col-lg-offset-3
-            ul.nav.nav-pills
-              li.active(role='presentation')
-                a(ui-sref='category') Home
-              li(role='presentation')
-                a(href='#') Profile
-              li(role='presentation')
-                a(href='#') Messages
-        div(ui-view='')
-      
-  script(src='libs/angular/angular.min.js')
-  script(src='libs/angular-ui-router/release/angular-ui-router.min.js')  
-  script(src='public/js/all.js')
+      head
+        block css
+          link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap.min.css")
+          link(rel="stylesheet", href="public/css/all.css")
+        title Home
+        
+      body(ng-controller='HomeController')
+        block content
+          div.menu
+            div.row
+              div.col-lg-10.col-lg-offset-3
+                ul.nav.nav-pills
+                  li.active(role='presentation')
+                    a(href='#') Home
+                  li(role='presentation')
+                    a(ui-sref='category') Category
+                  li(role='presentation')
+                    a(href='#') Messages
+            div(ui-view='')
+      script(src='node_modules/angular/angular.js')
+      script(src='node_modules/angular-ui-router/release/angular-ui-router.js')  
+      script(src='public/js/all.js')
       
       
   

@@ -1,6 +1,6 @@
 (function() {
-    angular.module('myapp').controller('HomeController',['$scope','$http','$state',
-     function ($scope, $http, $state) {
-
+    angular.module('myapp').controller('HomeController',['$scope', '$q',
+     function ($scope, $q) {
+        console.log('hurray');
     }]);
 }());

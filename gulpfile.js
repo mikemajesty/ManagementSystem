@@ -20,7 +20,7 @@ gulp.task('jade', () => {
 
 gulp.task('js', () => {
   return gulp.src('views/**/*.js')
-    .pipe(uglify())
+    .pipe(uglify({mangle: false}))
     .pipe(concat('all.js'))
     .pipe(gulp.dest('www/js/'))
 });

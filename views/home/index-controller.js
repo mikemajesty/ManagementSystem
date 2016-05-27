@@ -1,5 +1,5 @@
 (function() {
-    angular.module('myapp').controller('MenuController',['$scope','$http','$state',
+    angular.module('myapp').controller('HomeController',['$scope','$http','$state',
      function ($scope, $http, $state) {
 
     }]);

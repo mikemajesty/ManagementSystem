@@ -16,7 +16,7 @@ html(ng-app='myapp')
                     a(href='/') Home
                   li(role='presentation')
                     a(ui-sref='category', ng-click='getCategory()') Category
-                  li(role='presentation')
+                  li(role='presentation',  ng-click='create()')
                     a(href='#') Messages
             div(ui-view='')
       script(src='node_modules/angular/angular.js')

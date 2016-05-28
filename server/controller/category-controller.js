@@ -1,3 +1,5 @@
+const Category = require('../model/Category');
+
 module.exports.getCategory = (req, res) => {
   const data = {
     name: 'Mike Rodrigues De Lima',

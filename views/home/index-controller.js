@@ -3,7 +3,7 @@
      function ($scope, $http) {
        $scope.getCategory = () => {
           $http.get('api/category/getCategory').then( (data) => {
-            console.log('success', data);
+            $scope.categories = data.data;
           }).catch((err) => {console.log('opa parça', err);});
        };
     }]);

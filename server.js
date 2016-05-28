@@ -15,6 +15,7 @@ app.use('/', routes);
 
 app.get('/api/category/getCategory', category.getCategory);
 app.post('/api/category/create', category.create)
+
 app.listen(3000, () => {
   console.log('Running in port 3000');
 });

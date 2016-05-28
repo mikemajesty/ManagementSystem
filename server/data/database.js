@@ -10,3 +10,7 @@ var sequelize = new Sequelize('myapp', 'roor', 'root', {
     idle: 10000
   }
 });
+module.exports = {
+    sequelize,
+    Sequelize
+}

@@ -10,14 +10,27 @@ html(ng-app='myapp')
         block content
           div.menu
             div.row
-              div.col-lg-10.col-lg-offset-3
-                ul.nav.nav-pills
-                  li.active(role='presentation')
-                    a(href='/') Home
-                  li(role='presentation')
-                    a(ui-sref='category', ng-click='getCategory()') Category
-                  li(role='presentation',  ng-click='create()')
-                    a(href='#') Messages
+              nav.navbar.navbar-inverse
+                .container-fluid
+                  .navbar-header
+                    a.navbar-brand(href='#') Business System
+                  ul.nav.navbar-nav
+                    li.active
+                      a(href='/') Home
+                    li
+                      a(ui-sref='category', ng-click='getCategory()') Category
+                    li
+                      a(href='#',  ng-click='create()') Page 2
+                  ul.nav.navbar-nav.navbar-right
+                    li
+                      a(href='#')
+                        span.glyphicon.glyphicon-user
+                        |  Sign Up
+                    li
+                      a(href='#')
+                        span.glyphicon.glyphicon-log-in
+                        |  Login
+
             div(ui-view='')
       script(src='node_modules/angular/angular.js')
       script(src='node_modules/angular-ui-router/release/angular-ui-router.js')  

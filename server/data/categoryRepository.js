@@ -12,12 +12,8 @@ const create = (data) => {
 };
 
 const getAll = () => {
-  return Category.Category.findOne()
-    .then((data) => {
-      console.log('era pra dar: ', data.get());
-        return data.get();
-      }).catch((err) => { return err});
-  }
+  return Category.Category.all();
+}
 
 module.exports =  {
    create,

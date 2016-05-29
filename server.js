@@ -13,7 +13,7 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use(parser());
 app.use('/', routes);
 
-app.get('/api/category/getCategory', category.getCategory);
+app.get('/api/category/findAll', category.findAll);
 app.post('/api/category/create', category.create)
 
 app.listen(3000, () => {

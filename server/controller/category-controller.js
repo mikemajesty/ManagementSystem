@@ -1,20 +1,16 @@
 const repository = require('../data/categoryRepository');
+const cat = require('../model/Category');
 
-const getCategory = (req, res) => {
-  const data = {
-    name: 'Mike Rodrigues De Lima',
-    age: 27,
-    city: 'Ibiúna',
-    state: 'São Paulo',
-    country: 'Brasil'
-  }
-  res.json(data);
+const findAll = (req, res) => {
+   console.log('sera ', repository.getAll().then((value) => { return value}));
+   res.json(repository.getAll().then(value => value));
 }
 const create = (req, res) => {
   repository.create({name: req.body.name || null, descripition: req.body.descripition || null})
+  res.json(200);
 };
 
 module.exports = {
-  getCategory,
+  findAll,
   create
 }

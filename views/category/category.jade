@@ -1,12 +1,13 @@
-.category
-  table.table.table-striped.table-bordered(ng-show='categories')
-    thead
-      tr
-        th name
-        th age
-        th city
-        th state
-        th country
-    tbody
-      tr
-        td(ng-repeat='row in categories.data') {{row}}
+.well {{categories}}
+  .category
+    table.table.table-striped.table-bordered(ng-show='categories')
+      thead
+        tr
+          th name
+          th age
+          th city
+          th state
+          th country
+      tbody
+        tr
+          td(ng-repeat='row in categories') {{row}}

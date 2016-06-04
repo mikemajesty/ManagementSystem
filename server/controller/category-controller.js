@@ -19,11 +19,17 @@ const remove = (req, res) => {
      });
    }
  });
+};
 
+const edit = (req, res) => {
+  repository.edit(req.body.id).then((data) => {
+
+  });
 };
 
 module.exports = {
   findAll,
   create,
-  remove
+  remove,
+  edit
 }

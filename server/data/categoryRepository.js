@@ -19,8 +19,13 @@ const remove = (id) => {
   return Category.Category.destroy({ where: { id: id }});
 }
 
+const edit = (id) => {
+    return Category.Category.all();
+};
+
 module.exports =  {
    create,
    getAll,
-   remove
+   remove,
+   edit
 };

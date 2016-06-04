@@ -28,5 +28,14 @@
               console.log(err);
             });
         };
+
+        $scope.edit = (id) => {
+          $http.post('api/category/edit', {id})
+            .then((data) => {
+              $scope.categories = data.data;
+            }).catch((err) => {
+              console.log(err);
+            });
+        };
     }]);
 })(angular);

@@ -2,6 +2,8 @@
   'use strict';
   angular.module('myapp').controller('CategoryController', ['$scope', '$http',
       ($scope, $http) => {
+
+
         $scope.getCategory = () => {
           $http.get('api/category/findAll').then( (data) => {
             $scope.categories = data;
@@ -16,6 +18,15 @@
            $http.post('api/category/create', category).then( (data) => {
              console.log('created', data);
            }).catch((err) => {console.log('opa parça', err);});
+        };
+
+        $scope.delete = (id) => {
+          $http.post('api/category/delete', {id})
+            .then((data) => {
+              $scope.categories = data.data;
+            }).catch((err) => {
+              console.log(err);
+            });
         };
     }]);
 })(angular);

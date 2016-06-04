@@ -4,8 +4,12 @@
       tr
         th name
         th descripition
+        th Delete
+        th Edit
     tbody
       tr(ng-repeat='row in categories') 
         td  {{row.name}}
         td  {{row.descripition}}
-            
+        td
+          button(ng-click='delete(row.id)').btn-btn-default Deletar
+        td(ng-click='edit(row.id)')

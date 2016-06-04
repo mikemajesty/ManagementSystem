@@ -1,8 +1,8 @@
 const repository = require('../data/categoryRepository');
 
 const findAll = (req, res) => {
-  repository.getAll().then((value) => {
-    res.json(value);
+  repository.getAll().then((data) => {
+    res.json(data);
   });
 }
 
@@ -11,7 +11,19 @@ const create = (req, res) => {
   res.json(200);
 };
 
+const remove = (req, res) => {
+ repository.remove(req.body.id).then((data) => {
+   if (data) {
+     repository.getAll().then((data) => {
+       res.json(data);
+     });
+   }
+ });
+
+};
+
 module.exports = {
   findAll,
-  create
+  create,
+  remove
 }

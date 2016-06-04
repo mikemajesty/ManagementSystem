@@ -15,7 +15,12 @@ const getAll = () => {
   return Category.Category.all();
 }
 
+const remove = (id) => {
+  return Category.Category.destroy({ where: { id: id }});
+}
+
 module.exports =  {
    create,
-   getAll
+   getAll,
+   remove
 };

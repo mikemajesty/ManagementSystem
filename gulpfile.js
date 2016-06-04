@@ -4,7 +4,6 @@ const jade = require('gulp-jade');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync');
-const nodemon = require('gulp-nodemon');
 const babel = require('gulp-babel');
 
 gulp.task('sass', () => {
@@ -31,7 +30,7 @@ gulp.task('js', () => {
     .pipe(gulp.dest('www/js/'))
 });
 
-gulp.task('browser-sync', ['nodemon'], function() {
+gulp.task('browser-sync', () => {
 	browserSync.init(null, {
 		proxy: "http://localhost:3000",
         files: ["views/**/*.*"],
@@ -40,16 +39,10 @@ gulp.task('browser-sync', ['nodemon'], function() {
 	});
 });
 
-gulp.task('nodemon', (cb) =>{
-    return nodemon({
-      script: 'server.js'
-    }).once('start', cb);
-});
-
 gulp.task('watch', () => {
    gulp.watch('views/**/*.scss',['sass']);
    gulp.watch('views/**/*.jade',['jade']);
    gulp.watch('views/**/*.js',['js']);
 });
 
-gulp.task('default', ['sass', 'watch', 'jade', 'js']); // add in array 'browser-sync'
+gulp.task('default', ['sass', 'watch', 'jade', 'js', 'browser-sync']); // add in array 'browser-sync'

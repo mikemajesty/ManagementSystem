@@ -1,6 +1,6 @@
 .category {
   table {
-    width: 90%;
+    width: 50%;
     text-align: center;
     margin: auto;
     margin-top: 20px;
@@ -8,6 +8,17 @@
       th {
         text-align: center;
       }
+      td {
+        .btn.btn-danger {
+          width: 90%;
+        }
+
+        .btn.btn-warning {
+          width: 90%;
+        }
+      }
     }
+
+
   }
 }

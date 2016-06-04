@@ -1,12 +1,18 @@
 /* line 2, /home/mike/Projects/MangementSystem/views/category/category.scss */
 .category table {
-  width: 90%;
+  width: 50%;
   text-align: center;
   margin: auto;
   margin-top: 20px; }
   /* line 8, /home/mike/Projects/MangementSystem/views/category/category.scss */
   .category table tr th {
     text-align: center; }
+  /* line 12, /home/mike/Projects/MangementSystem/views/category/category.scss */
+  .category table tr td .btn.btn-danger {
+    width: 90%; }
+  /* line 16, /home/mike/Projects/MangementSystem/views/category/category.scss */
+  .category table tr td .btn.btn-warning {
+    width: 90%; }
 
 /* line 3, /home/mike/Projects/MangementSystem/views/home/index.scss */
 .menu nav {

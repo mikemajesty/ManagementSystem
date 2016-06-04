@@ -11,5 +11,6 @@
         td  {{row.name}}
         td  {{row.descripition}}
         td
-          button(ng-click='delete(row.id)').btn-btn-default Deletar
-        td(ng-click='edit(row.id)')
+          button(ng-click='delete(row.id)').btn.btn-danger Delete
+        td
+          button(ng-click='edit(row.id)').btn.btn-warning Edit

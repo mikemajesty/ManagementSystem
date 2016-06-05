@@ -12,6 +12,10 @@
         url: '/category-create/:id?',
         templateUrl: '/public/html/category-create/category-create.html',
         controller: 'CategoryCreateController'
+      }).state('category-edit', {
+        url: '/category-edit/:id',
+        templateUrl: '/public/html/category-create/category-edit.html',
+        controller: 'CategoryEditController'
       });
 
     });

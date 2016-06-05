@@ -1,7 +1,8 @@
 ( (angular) => {
   'use strict';
-  angular.module('myapp').controller('CategoryController', ['$scope', '$http',
-      ($scope, $http) => {
+  angular.module('myapp').controller('CategoryController',
+    ['$scope', '$http', '$location',
+      ($scope, $http, $location) => {
 
         $scope.getCategory();
 
@@ -31,12 +32,7 @@
         };
 
         $scope.edit = (id) => {
-          $http.post('api/category/edit', {id})
-            .then((data) => {
-              $scope.categories = data.data;
-            }).catch((err) => {
-              console.log(err);
-            });
+          $location.path('category-edit');
         };
     }]);
 })(angular);

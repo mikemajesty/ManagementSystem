@@ -29,15 +29,16 @@ gulp.task('js', () => {
       }))
       .pipe(uglify({mangle: false}))
         .pipe(concat('all.js'))
-          .pipe(gulp.dest('www/js/'))
+          .pipe(gulp.dest('www/js/'));
 });
 
 gulp.task('browser-sync', () => {
 	browserSync.init(null, {
 		proxy: "http://localhost:3000",
-        files: ["views/**/*.*"],
+        files: ["views/**/*.*", "views/*.*"],
         browser: 'google-chrome',
         port: 8000,
+        open: false
 	});
 });
 

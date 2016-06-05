@@ -1,9 +1,9 @@
 ((angular) => {
   'use sctrict'
   angular.module('myapp')
-    .controller('CategoryCreateController', ['$scope', '$http', '$location', '$timeout', controller]);
+    .controller('CategoryCreateController', ['$scope', '$http', '$state', '$timeout', controller]);
 
-     function controller($scope, $http , $location, $timeout) {
+     function controller($scope, $http , $state, $timeout) {
 
        $scope.submit = () => {
          const data = {
@@ -13,10 +13,10 @@
 
          $http.post('api/category/create', data)
           .then((data) => {
-
-          $timeout(() => {
-            $location.path('category');
-          },1000);
+            
+            $timeout(() => {
+                  $state.go('category');
+            },1000);
 
           }).catch((err) => {
             console.log('was error');

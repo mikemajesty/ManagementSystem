@@ -1,13 +1,12 @@
 ( (angular) => {
   'use strict';
   angular.module('myapp').controller('CategoryController',
-    ['$scope', '$http', '$location',
-      ($scope, $http, $location) => {
+    ['$scope', '$http', '$state',
+      ($scope, $http, $state) => {
 
 
         $scope.getCategory = () => {
           $http.get('api/category/findAll').then( (data) => {
-            console.log('categories::', data);
             $scope.categories = data.data;
           }).catch((err) => {console.log('opa parça', err);});
         };
@@ -22,7 +21,8 @@
         };
 
         $scope.edit = (id) => {
-          $location.path('category-edit');
+          console.log('sera?');
+            $state.go('category-edit',{id});
         };
 
         $scope.getCategory();

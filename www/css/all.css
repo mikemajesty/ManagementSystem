@@ -18,12 +18,19 @@
 .category-create {
   display: flex; }
   /* line 4, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
+  .category-create .padding {
+    margin-top: 10px;
+    padding-top: 10px; }
+  /* line 9, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
   .category-create form {
     margin: auto;
     width: 70%; }
-    /* line 8, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
+    /* line 13, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
     .category-create form textarea {
-      height: 200px; }
+      height: 150px; }
+    /* line 17, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
+    .category-create form input[type="submit"] {
+      margin-top: 10px; }
 
 /* line 3, /home/mike/Projects/MangementSystem/views/home/index.scss */
 .menu nav {

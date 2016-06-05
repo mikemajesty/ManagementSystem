@@ -4,9 +4,9 @@
     hr
     label
       |Name
-    input(type='text').form-control
-    label
+    input(type='text' name='category.name').form-control
+    label.padding
       |Descripition
-    textarea.form-control
+    textarea(name='category.descripition').form-control
     
-    input(type="submit", value='Save').btn.btn-primary
+    input(type="submit", value='Save').btn.btn-primary.btn-lg

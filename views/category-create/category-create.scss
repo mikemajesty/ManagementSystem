@@ -1,21 +1,21 @@
 .category-create {
   display: flex;
 
+  .padding {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
   form {
     margin: auto;
     width: 70%;
 
     textarea {
-      height: 10px;
+      height: 150px;
     }
 
     input[type="submit"] {
       margin-top: 10px;
     }
-
-    label:nth-of-type(2) {
-      display: none !important;
-    }
-
   }
 }

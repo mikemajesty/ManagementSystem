@@ -9,7 +9,7 @@
         templateUrl: '/public/html/category/category.html',
         controller: 'CategoryController'
       }).state('category-create', {
-        url: '/category-create',
+        url: '/category-create/:id?',
         templateUrl: '/public/html/category-create/category-create.html',
         controller: 'CategoryCreateController'
       });

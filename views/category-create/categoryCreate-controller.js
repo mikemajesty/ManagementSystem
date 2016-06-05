@@ -1,19 +1,19 @@
 ((angular) => {
   'use sctrict'
   angular.module('myapp')
-    .controller('CategoryCreateController', ['$scope', '$http', controller]);
+    .controller('CategoryCreateController', ['$scope', '$http', '$location', controller]);
 
-     function controller($scope, $http) {
+     function controller($scope, $http , $location) {
 
        $scope.submit = () => {
          const data = {
            name: $scope.category.name,
            descripition: $scope.category.descripition
          };
-         console.log(data);
+         
          $http.post('api/category/create', data)
           .then((data) => {
-            console.log('was saved');
+            $location.path('category');
           }).catch((err) => {
             console.log('was error');
           });

@@ -22,14 +22,25 @@ const remove = (req, res) => {
 };
 
 const edit = (req, res) => {
+  const data = {
+    id: req.body.id || 0,
+    name: req.body.name || null,
+    descripition: req.body.descripition || null
+  };
+
   repository.edit(req.body.id).then((data) => {
 
   });
+};
+
+const getBy = (req, res) => {
+  return repository.getBy(req.body.id);
 };
 
 module.exports = {
   findAll,
   create,
   remove,
-  edit
+  edit,
+  getBy
 }

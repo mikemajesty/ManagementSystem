@@ -1,12 +1,12 @@
 .category-create
-  form(validate)
+  form(validate, ng-submit='submit()')
     h3 Category create
     hr
     label
       |Name
-    input(type='text' name='category.name').form-control
+    input(type='text' name='name', ng-model='category.name').form-control
     label.padding
       |Descripition
-    textarea(name='category.descripition').form-control
+    textarea(name='descripition', ng-model='category.descripition').form-control
     
     input(type="submit", value='Save').btn.btn-primary.btn-lg

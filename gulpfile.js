@@ -9,9 +9,9 @@ const babel = require('gulp-babel');
 gulp.task('sass', () => {
   return gulp.src('views/**/*.scss').
     pipe(sass({sourceComments: 'map'})).
-      pipe(concat('all.css')).
-        pipe(browserSync.reload({stream: true}))
-          pipe(gulp.dest('www/css'));
+      pipe(concat('all.css'))
+        .pipe(gulp.dest('www/css'))
+          .pipe(browserSync.reload({stream: true}));
 
 });
 

@@ -3,6 +3,7 @@
   angular.module('myapp').controller('CategoryController', ['$scope', '$http',
       ($scope, $http) => {
 
+        $scope.getCategory();
 
         $scope.getCategory = () => {
           $http.get('api/category/findAll').then( (data) => {

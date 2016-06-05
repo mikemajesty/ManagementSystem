@@ -14,6 +14,17 @@
   .category table tr td .btn.btn-warning {
     width: 90%; }
 
+/* line 1, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
+.category-create {
+  display: flex; }
+  /* line 4, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
+  .category-create form {
+    margin: auto;
+    width: 70%; }
+    /* line 8, /home/mike/Projects/MangementSystem/views/category-create/category-create.scss */
+    .category-create form textarea {
+      height: 200px; }
+
 /* line 3, /home/mike/Projects/MangementSystem/views/home/index.scss */
 .menu nav {
   padding: 10px; }

@@ -9,15 +9,17 @@ const babel = require('gulp-babel');
 gulp.task('sass', () => {
   return gulp.src('views/**/*.scss').
     pipe(sass({sourceComments: 'map'})).
-    pipe(concat('all.css')).
-    pipe(gulp.dest('www/css'));
+      pipe(concat('all.css')).
+        pipe(browserSync.reload({stream: true}))
+          pipe(gulp.dest('www/css'));
 
 });
 
 gulp.task('jade', () => {
   return gulp.src('views/**/*.jade')
     .pipe(jade())
-      .pipe(gulp.dest('www/html'));
+      .pipe(browserSync.reload({stream: true}))
+        .pipe(gulp.dest('www/html'));
 });
 
 gulp.task('js', () => {
@@ -25,9 +27,9 @@ gulp.task('js', () => {
     .pipe(babel({
         presets: ['es2015']
       }))
-    .pipe(uglify({mangle: false}))
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest('www/js/'))
+      .pipe(uglify({mangle: false}))
+        .pipe(concat('all.js'))
+          .pipe(gulp.dest('www/js/'))
 });
 
 gulp.task('browser-sync', () => {
@@ -39,10 +41,14 @@ gulp.task('browser-sync', () => {
 	});
 });
 
+gulp.task('browser-reload',['browser-sync'] ,function (){
+    browserSync.reload();
+});
+
 gulp.task('watch', () => {
    gulp.watch('views/**/*.scss',['sass']);
    gulp.watch('views/**/*.jade',['jade']);
    gulp.watch('views/**/*.js',['js']);
 });
 
-gulp.task('default', ['sass', 'watch', 'jade', 'js', 'browser-sync']); // add in array 'browser-sync'
+gulp.task('default', ['sass', 'watch', 'jade', 'js', 'browser-reload']); // add in array 'browser-sync'

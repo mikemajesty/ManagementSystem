@@ -1,0 +1,21 @@
+.category-create {
+  display: flex;
+
+  form {
+    margin: auto;
+    width: 70%;
+
+    textarea {
+      height: 10px;
+    }
+
+    input[type="submit"] {
+      margin-top: 10px;
+    }
+
+    label:nth-of-type(2) {
+      display: none !important;
+    }
+
+  }
+}

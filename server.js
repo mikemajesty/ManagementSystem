@@ -18,6 +18,8 @@ app.post('/api/category/create', category.create);
 app.post('/api/category/delete', category.remove);
 app.post('/api/category/edit', category.edit);
 
-app.listen(3000, () => {
-  console.log('Running in port 3000');
+const PORT = process.env.port || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Running in port ${PORT}`);
 });

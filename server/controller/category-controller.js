@@ -28,7 +28,7 @@ const edit = (req, res) => {
     descripition: req.body.descripition || null
   };
 
-  repository.edit(req.body.id).then((data) => {
+  repository.edit(data).then((data) => {
 
   });
 };

@@ -21,7 +21,6 @@
         };
 
         $scope.edit = (id) => {
-          console.log('sera?');
             $state.go('category-edit',{id});
         };
 

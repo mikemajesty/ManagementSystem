@@ -1,12 +1,13 @@
 .category-edit
-  form(validate, ng-submit='submit()')
+  form(validate, ng-submit='submit(category)')
     h3 Category edit
     hr
     label
       |Name
-    input(type='text' name='name', ng-model='category.name').form-control
+    input(type='hidden', name='category.id')
+    input(type='text' name='category.name', ng-model='category.name').form-control
     label.padding
       |Descripition
-    textarea(name='descripition', ng-model='category.descripition').form-control
+    textarea(name='category.descripition', ng-model='category.descripition').form-control
     
-    input(type="submit", value='Save').btn.btn-primary.btn-lg
+    input(type="submit", value='Save').btn.btn-primary.btn-lg.padding

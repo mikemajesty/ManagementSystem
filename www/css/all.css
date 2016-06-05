@@ -32,6 +32,17 @@
     .category-create form input[type="submit"] {
       margin-top: 10px; }
 
+/* line 1, /home/mike/Projects/MangementSystem/views/category-edit/category-edit.scss */
+.category-edit {
+  display: flex; }
+  /* line 4, /home/mike/Projects/MangementSystem/views/category-edit/category-edit.scss */
+  .category-edit .padding {
+    margin-top: 10px;
+    padding-top: 10px; }
+  /* line 9, /home/mike/Projects/MangementSystem/views/category-edit/category-edit.scss */
+  .category-edit form {
+    margin: auto;
+    width: 80%; }
 
 /* line 3, /home/mike/Projects/MangementSystem/views/home/index.scss */
 .menu nav {

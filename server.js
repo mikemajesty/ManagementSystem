@@ -17,6 +17,7 @@ app.get('/api/category/findAll', category.findAll);
 app.post('/api/category/create', category.create);
 app.post('/api/category/delete', category.remove);
 app.post('/api/category/edit', category.edit);
+app.get('/api/category/get/:id?', category.getBy);
 
 const PORT = process.env.port || 3000;
 

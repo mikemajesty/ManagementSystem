@@ -28,13 +28,16 @@ const edit = (req, res) => {
     descripition: req.body.descripition || null
   };
 
-  repository.edit(data).then((data) => {
-
+  repository.edit(data).then((val) => {
+      res.json(val);
   });
 };
 
 const getBy = (req, res) => {
-  return repository.getBy(req.body.id);
+  return repository.getBy(req.query.id)
+    .then((data) => {
+      res.json(data);
+    });
 };
 
 module.exports = {
